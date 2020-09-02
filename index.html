@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web Browser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navigation">
+    <div id="back"><</div>
+    <div id="forward">></div>
+    <div id="refresh">⟳</div>
+    <div id="omnibox">
+      <input type="text" id="url">
+    </div>
+  </nav>
+  <div id="views">
+    <webview id="view" class="page" src="https://google.com" autosize="on"></webview>
+  </div>
+  <script>
+    require('./renderer.js');
+  </script>
+</body>
+</html>

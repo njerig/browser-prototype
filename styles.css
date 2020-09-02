@@ -1,0 +1,40 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+#navigation {
+  position: fixed;
+  top:0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  width: 100%;
+  height: 30px;
+}
+
+#navigation #back,
+#navigation #forward,
+#navigation #refresh {
+  color: white;
+  padding: 0 10px;
+}
+
+#omnibox { 
+  flex: 1;
+  margin: 0 20px;
+}
+
+#omnibox input {
+  width: 100%;
+  border: solid 2px silver;
+  border-radius: 2px;
+}
+
+webview {
+  display: flex;
+  height: 100vh;
+  margin-top: 28px;
+}
