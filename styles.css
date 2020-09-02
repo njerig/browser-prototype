@@ -18,8 +18,19 @@ body {
 #navigation #back,
 #navigation #forward,
 #navigation #refresh {
+  border:none;
+  background-color: blue;
   color: white;
+  margin:0;
   padding: 0 10px;
+  height: 100%;
+}
+
+#navigation #back:hover,
+#navigation #forward:hover,
+#navigation #refresh:hover {
+  background-color: #000080;
+  cursor: pointer;
 }
 
 #omnibox { 

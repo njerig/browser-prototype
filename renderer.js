@@ -1,7 +1,9 @@
 let omni = document.getElementById('url'),
-    view = document.getElementById('view');
+    view = document.getElementById('view'),
+    forward = document.getElementById('forward'),
+    reload = document.getElementById('refresh');
 
-function updateURL (event) {
+function updateURLProtocol (event) {
   if (event.keyCode === 13) {
     omni.blur();
     let val = omni.value;
@@ -9,9 +11,25 @@ function updateURL (event) {
     if (protocol.test(val)) {
       view.loadURL(val);
     } else {
-      view.loadURL('http://' + val);
+      view.loadURL('https://' + val);
     }
   }
 }
 
-omni.addEventListener('keydown', updateURL);
+function goBackView () {
+  view.goBack();
+  omni.innerHTML  = view.getURL();
+}
+
+function goForwardView () {
+  view.goForward();
+}
+
+function reloadView () {
+  view.reload();
+}
+
+omni.addEventListener('keydown', updateURLProtocol);
+back.addEventListener('click', goBackView);
+forward.addEventListener('click', goForwardView);
+reload.addEventListener('click', reloadView);
