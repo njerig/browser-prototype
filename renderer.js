@@ -3,10 +3,15 @@ let omni = document.getElementById('url'),
     forward = document.getElementById('forward'),
     reload = document.getElementById('refresh');
 
-function updateURLProtocol (event) {
+function updateOmnibox () {
+  omni.value = view.getURL();
+}
+
+function updateURL (event) {
   if (event.keyCode === 13) {
     omni.blur();
     let val = omni.value;
+    // checking for protocol
     let protocol = /^(http|https):\/\/[^ "]+$/;
     if (protocol.test(val)) {
       view.loadURL(val);
@@ -29,7 +34,8 @@ function reloadView () {
   view.reload();
 }
 
-omni.addEventListener('keydown', updateURLProtocol);
+omni.addEventListener('keydown', updateURL);
 back.addEventListener('click', goBackView);
 forward.addEventListener('click', goForwardView);
 reload.addEventListener('click', reloadView);
+view.addEventListener('did-finish-load', updateOmnibox);
