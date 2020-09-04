@@ -1,10 +1,15 @@
 let omni = document.getElementById('url'),
     view = document.getElementById('view'),
     forward = document.getElementById('forward'),
-    reload = document.getElementById('refresh');
+    reload = document.getElementById('refresh'),
+    historyPane = document.getElementById('history');
 
-function updateOmnibox () {
+let historyList = []
+
+function updateOmniboxAndHistory () {
   omni.value = view.getURL();
+  historyList.push(view.getURL());
+  historyPane.innerHTML += view.getURL() + "<br>";
 }
 
 function updateURL (event) {
@@ -38,4 +43,4 @@ omni.addEventListener('keydown', updateURL);
 back.addEventListener('click', goBackView);
 forward.addEventListener('click', goForwardView);
 reload.addEventListener('click', reloadView);
-view.addEventListener('did-finish-load', updateOmnibox);
+view.addEventListener('did-finish-load', updateOmniboxAndHistory);

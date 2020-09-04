@@ -7,21 +7,36 @@
 </head>
 <body>
   <div id="history">
-    help
+    <button id="historyPaneClose" onclick="hideHistory()">✕</button>
+    <h2>History</h2>
   </div>
-  <nav id="navigation">
-    <button id="back"><</button>
-    <button id="forward">></button>
-    <button id="refresh">⟳</button>
-    <div id="omnibox">
-      <input type="text" id="url">
+    <div id="main">
+      <nav id="navigation">
+        <button id="openHistory" onclick="showHistory()">❉</button>
+        <button id="back"><</button>
+        <button id="forward">></button>
+        <button id="refresh">⟳</button>
+        <div id="omnibox">
+          <input type="text" id="url">
+        </div>
+      </nav>
+      <div id="views">
+        <webview id="view" class="page" src="about:blank" autosize="on"></webview>
+      </div>
     </div>
-  </nav>
-  <div id="views">
-    <webview id="view" class="page" src="https://google.com" autosize="on"></webview>
-  </div>
+  <script>require('./renderer.js');</script>
   <script>
-    require('./renderer.js');
+    function showHistory() {
+      document.getElementById("history").style.display = "block";
+      document.getElementById("history").style.width = "260px";
+      document.getElementById('openHistory').style.display = "none";
+      document.getElementById('main').style.marginLeft= "280px";
+    }
+    function hideHistory() {
+      document.getElementById("history").style.display = "none";
+      document.getElementById('openHistory').style.display = "block";
+      document.getElementById('main').style.marginLeft= "0";
+    }
   </script>
 </body>
 </html>
