@@ -8,8 +8,8 @@ require('electron-reload')(__dirname, {
 function createWindow() {
   // Create the browser window
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 768,
     webPreferences: {
       nodeIntegration: true,
       webviewTag: true
@@ -17,7 +17,7 @@ function createWindow() {
   })
 
   // load the index.html of the app
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('browser.html')
 
   // open DevTools
   // mainWindow.webContents.openDevTools()

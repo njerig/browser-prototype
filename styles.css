@@ -3,6 +3,7 @@ body {
   height: 100vh;
   margin: 0;
   padding-top: 30px;
+  font-family: Arial, sans-serif;
 }
 
 #navigation {
@@ -75,6 +76,7 @@ body {
   float: right;
   width: 100%;
   margin-top: 30px;
+  margin-left: 260px;
 }
 
 #view {

@@ -1,17 +1,31 @@
 {
-  "name": "web-browser",
+  "name": "browser-prototype",
   "version": "0.1.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "author": "Njeri Gachoka",
   "devDependencies": {
-    "electron": "^10.1.0",
-    "path": "^0.12.7"
+    "electron-reload": "^1.5.0"
   },
   "dependencies": {
-    "electron-reload": "^1.5.0"
-  }
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "electron": "^10.1.0",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njerig/browser-prototype.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njerig/browser-prototype/issues"
+  },
+  "homepage": "https://github.com/njerig/browser-prototype#readme",
+  "description": ""
 }
