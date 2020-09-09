@@ -165,6 +165,19 @@ function reloadView () {
   view.reload();
 }
 
+function showHistory() {
+      document.getElementById("history").style.display = "block";
+      document.getElementById("history").style.width = "260px";
+      document.getElementById('openHistory').style.display = "none";
+      document.getElementById('main').style.marginLeft= "280px";
+}
+
+function hideHistory() {
+  document.getElementById("history").style.display = "none";
+  document.getElementById('openHistory').style.display = "block";
+  document.getElementById('main').style.marginLeft= "0";
+}
+
 omni.addEventListener('keydown', updateURL);
 back.addEventListener('click', goBackView);
 forward.addEventListener('click', goForwardView);
